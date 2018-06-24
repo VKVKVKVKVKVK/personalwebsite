@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MusicsComponent } from './components/musics/musics.component';
 import { AddMusicComponent } from './components/add-music/add-music.component';
 import { EditMusicComponent } from './components/edit-music/edit-music.component';
 import { MusicDetailsComponent } from './components/music-details/music-details.component';
@@ -17,9 +18,10 @@ const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'music/add', component: AddMusicComponent},
-  {path: 'music/edit/:id', component: EditMusicComponent},
-  {path: 'music/:id', component: MusicDetailsComponent},
+  {path: 'musics', component: MusicsComponent},
+  {path: 'musics/add', component: AddMusicComponent},
+  {path: 'musics/edit/:id', component: EditMusicComponent},
+  {path: 'musics/:id', component: MusicDetailsComponent},
   {path: 'settings', component: SettingsComponent},
   {path: '**', component: NotFoundComponent}
 ];

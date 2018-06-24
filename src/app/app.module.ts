@@ -17,6 +17,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { EditMusicComponent } from './components/edit-music/edit-music.component';
 import { MusicDetailsComponent } from './components/music-details/music-details.component';
+import { MusicsComponent } from './components/musics/musics.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MusicDetailsComponent } from './components/music-details/music-details.
     SettingsComponent,
     NotFoundComponent,
     EditMusicComponent,
-    MusicDetailsComponent
+    MusicDetailsComponent,
+    MusicsComponent
   ],
   imports: [
     BrowserModule,
