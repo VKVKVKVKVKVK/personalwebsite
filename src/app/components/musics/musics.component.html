@@ -1,24 +1,28 @@
-<div *ngIf="musics?.length > 0; else noMusics">
-  <div >
-    <!-- 
-    <h3>{{ music.title }} {{ music.artist }}</h3>
-    <br>
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NUC2EQvdzmY" allowfullscreen></iframe>
-    </div>
-    -->
+<div class="row">
+  <div class="col-md-3 offset-md-9">
+    <a routerLink="/musics/add" class="btn btn-success btn-block">
+      <i class="fa fa-plus"></i> New</a>
+  </div>
+</div>
 
+<br>
+
+<div *ngIf="musics?.length > 0; else noMusics">
+  <div>
     <div class="accordion" id="accordionExample">
-      <div *ngFor="let music of musics" class="card" >
+      <div *ngFor="let music of musics" class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="#{{music.id}}" aria-expanded="true" aria-controls="{{music.id}}">
-                {{ music.title }} {{ music.artist }}
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#test" aria-expanded="true" aria-controls="test">
+              {{ music.title }} - {{ music.artist }}
             </button>
+            <a routerLink="music/{{ music.id }}" class="pull-right">
+              <i>Detail</i>
+            </a>
           </h5>
         </div>
 
-        <div id="{{music.id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="test" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NUC2EQvdzmY" allowfullscreen></iframe>

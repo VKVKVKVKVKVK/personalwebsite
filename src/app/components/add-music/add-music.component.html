@@ -1,3 +1,53 @@
-<p>
-  add-music works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard</a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Music
+  </div>
+  <div class="card-body">
+    <form #musicForm="ngForm" (ngSubmit)="onSubmit(musicForm)">
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" #musicTitle="ngModel" [ngClass]="{'is-invalid':musicTitle.errors && musicTitle.touched}"
+          [(ngModel)]="title" minlength="2" required>
+
+        <div [hidden]="!musicTitle.errors?.required" class="invalid-feedback">
+          Title required
+        </div>
+        <div [hidden]="!musicTitle.errors?.minlength" class="invalid-feedback">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="artist">Artist</label>
+        <input type="text" class="form-control" name="artist" #musicArtist="ngModel" [ngClass]="{'is-invalid':musicArtist.errors && musicArtist.touched}"
+          [(ngModel)]="artist" minlength="2" required>
+
+        <div [hidden]="!musicArtist.errors?.required" class="invalid-feedback">
+          Artist required
+        </div>
+        <div [hidden]="!musicArtist.errors?.minlength" class="invalid-feedback">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="link">Link</label>
+        <input type="text" class="form-control" name="link" #musicLink="ngModel" [(ngModel)]="link" [disabled]="disableVideoLink">
+      </div>
+
+      <input type="submit" value="Submit" class="btn btn-primary btn-block">
+
+    </form>
+  </div>
+</div>
