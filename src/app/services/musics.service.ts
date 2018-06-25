@@ -32,4 +32,8 @@ export class MusicsService {
     }));
     return this.musics;
   }
+
+  newMusic(music: Music) {
+    this.musicsCollection.add(music);
+  }
 }
